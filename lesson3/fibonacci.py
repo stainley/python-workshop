@@ -1,3 +1,6 @@
+import time
+
+
 def fibonacci_iterative(n):
     previous = 0
     current = 1
@@ -12,4 +15,13 @@ def fibonacci_recursive(n):
     if n == 0 or n == 1:
         return n
     else:
+        return fibonacci_recursive(n - 2) + fibonacci_recursive(n - 1)
+
+
+def fibonacci_dynamic(n):
+    start_time = time.perf_counter()
+    if n == 0 or n == 1:
+        return n
+    else:
+        print(time.perf_counter() - start_time, "seconds")
         return fibonacci_recursive(n - 2) + fibonacci_recursive(n - 1)
